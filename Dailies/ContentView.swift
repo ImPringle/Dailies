@@ -10,78 +10,87 @@ import SwiftUI
 
 
 struct ContentView: View {
-    var platforms: [Platform] =
-        [.init(name: "PC", imageName: "pc", color: .pink),
-         .init(name: "Playstation", imageName:"playstation.logo", color: .blue),
-         .init(name: "Xbox", imageName:"xbox.logo", color: .green),
-         .init(name: "Mobile", imageName:"iphone", color: .purple),]
-
-    var games: [Game] = [.init(name: "Rocket League", rating: "10/10"),
-                         .init(name: "Call of Duty: Warzone", rating: "9/10"),
-                         .init(name: "Valorant", rating: "9.5/10"),
-                         .init(name: "Free Fire", rating: "3/10")]
     
-    @State private var path: [Game] = []
+    @State private var path = NavigationPath()
+    @State private var balance: Float = 0
+    @State private var isShowingAddMovement: Bool = false
+    @State private var isShowingSetGoal: Bool = false
+    @State private var movements: [Movement] = []
+    @State private var goal: Float = 1000
+    
     
     var body: some View {
-        NavigationStack (path: $path) {
-            List {
-                Section("Platforms") {
-                    ForEach(platforms, id: \.name) { platform in
-                        NavigationLink(value: platform){
-                            Label(platform.name, systemImage: platform.imageName)
-                                .foregroundStyle(platform.color)
-                        }
-                    }
+        NavigationStack(path: $path) {
+            VStack {
+                Text("\(String(format: "%.2f", balance))")
+                    .font(.system(size: 64)).bold()
+                    .padding()
+                HStack{
+                    Spacer()
+                    Text("\(String(format: "%.2f", goal))")
+                        .foregroundStyle(.green)
                 }
-                Section("Games") {
-//                    ForEach(games, id: \.name) {game in
-//                        NavigationLink(value: game) {
-//                            Text(game.name)
-//                        }
-//                    }
-                    Button("Add Games") {
-                        path = games
-                    }
-                }
-            }
-            .navigationTitle("Gaming")
-            .navigationDestination(for: Platform.self) { platform in
+                .padding(.horizontal)
                 ZStack {
-                    platform.color.ignoresSafeArea()
-                    Label(platform.name, systemImage: platform.imageName)
-                        .font(.largeTitle)
-                        .bold()
-                        .foregroundStyle(.white)
-                }
-            }
-            .navigationDestination(for: Game.self) {game in
-                VStack {
-                    Text("\(game.name) -> rating: \(game.rating)" )
-                        .font(.largeTitle.bold())
-                    Button("Go back to home") {
-                        path = []
+                    GeometryReader { geometry in
+                        HStack {
+                            
+                        }
+                        .frame(maxWidth: geometry.size.width * CGFloat((balance/goal)), maxHeight: 20)
+                        .background(.green)
                     }
                 }
+                .frame(maxWidth: .infinity, maxHeight: 20)
+                .background(.gray)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .padding(.horizontal)
                 
+                HStack{
+                    Button ("Add") {
+                        isShowingAddMovement.toggle()
+                    }
+                    .sheet(isPresented: $isShowingAddMovement) {
+                        AddMovementView(movements: $movements, isShowingAddMovements: $isShowingAddMovement,
+                            balance: $balance)
+                            .presentationDetents([.medium])
+                    }
+                    
+                    Spacer()
+                    
+                    Button ("Set goal") {
+                        isShowingSetGoal.toggle()
+                    }
+                    .sheet(isPresented: $isShowingSetGoal) {
+                        SetGoalView(floatGoal: $goal, isShowingSetGoal: $isShowingSetGoal)
+                    }
+                }
+                .padding()
+            }
+            Spacer()
+            List {
+                Section(header: Text("Movements")){
+                    if (!movements.isEmpty) {
+                        ForEach(movements.reversed()){ movement in
+                            if (movement.isIncome) {
+                                Text("\(String(format: "%.2f", movement.amount))")
+                                    .foregroundStyle(.green)
+                            } else {
+                                Text("\(String(format: "%.2f", movement.amount))")
+                                    .foregroundStyle(.red)
+                            }
+                            
+                        }
+                    } else {
+                        Text("No movements yet")
+                            .foregroundStyle(.gray)
+                    }
+                }
             }
         }
-        
-        
-        
     }
 }
 
-struct Platform: Hashable {
-    let name: String
-    let imageName: String
-    let color: Color
-}
 
-struct Game: Hashable {
-    let name: String
-    let rating: String
-}
 
 #Preview {
     ContentView()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752A5A082C6E8A6400D1C636 /* AddMovementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752A5A072C6E8A6400D1C636 /* AddMovementView.swift */; };
 		756445722C6D324F000A5789 /* DailiesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756445712C6D324F000A5789 /* DailiesApp.swift */; };
 		756445742C6D324F000A5789 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756445732C6D324F000A5789 /* ContentView.swift */; };
 		756445762C6D3251000A5789 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 756445752C6D3251000A5789 /* Assets.xcassets */; };
@@ -14,6 +15,8 @@
 		756445832C6D3251000A5789 /* DailiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756445822C6D3251000A5789 /* DailiesTests.swift */; };
 		7564458D2C6D3251000A5789 /* DailiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564458C2C6D3251000A5789 /* DailiesUITests.swift */; };
 		7564458F2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564458E2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift */; };
+		75C46DE32C6FC40F00E2451A /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C46DE22C6FC40F00E2451A /* Movement.swift */; };
+		75C46DE52C6FDCD800E2451A /* SetGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C46DE42C6FDCD800E2451A /* SetGoalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		752A5A072C6E8A6400D1C636 /* AddMovementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMovementView.swift; sourceTree = "<group>"; };
 		7564456E2C6D324F000A5789 /* Dailies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dailies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		756445712C6D324F000A5789 /* DailiesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailiesApp.swift; sourceTree = "<group>"; };
 		756445732C6D324F000A5789 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +48,8 @@
 		756445882C6D3251000A5789 /* DailiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7564458C2C6D3251000A5789 /* DailiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailiesUITests.swift; sourceTree = "<group>"; };
 		7564458E2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		75C46DE22C6FC40F00E2451A /* Movement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
+		75C46DE42C6FDCD800E2451A /* SetGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		752A5A062C6E8A5400D1C636 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				752A5A072C6E8A6400D1C636 /* AddMovementView.swift */,
+				75C46DE42C6FDCD800E2451A /* SetGoalView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		756445652C6D324E000A5789 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +111,8 @@
 			children = (
 				756445712C6D324F000A5789 /* DailiesApp.swift */,
 				756445732C6D324F000A5789 /* ContentView.swift */,
+				75C46DE12C6FC3DF00E2451A /* Models */,
+				752A5A062C6E8A5400D1C636 /* Views */,
 				756445752C6D3251000A5789 /* Assets.xcassets */,
 				756445772C6D3251000A5789 /* Preview Content */,
 			);
@@ -125,6 +142,14 @@
 				7564458E2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift */,
 			);
 			path = DailiesUITests;
+			sourceTree = "<group>";
+		};
+		75C46DE12C6FC3DF00E2451A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				75C46DE22C6FC40F00E2451A /* Movement.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +282,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75C46DE32C6FC40F00E2451A /* Movement.swift in Sources */,
 				756445742C6D324F000A5789 /* ContentView.swift in Sources */,
+				752A5A082C6E8A6400D1C636 /* AddMovementView.swift in Sources */,
 				756445722C6D324F000A5789 /* DailiesApp.swift in Sources */,
+				75C46DE52C6FDCD800E2451A /* SetGoalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
