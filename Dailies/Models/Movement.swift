@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movement: Identifiable {
+struct Movement: Hashable {
     var id = UUID()
     var amount: Float
     var isIncome: Bool

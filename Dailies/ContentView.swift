@@ -41,7 +41,7 @@ struct ContentView: View {
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: 20)
-                .background(.gray)
+                .background(Color(red: 201/255, green: 201/255, blue: 201/255))
                 .clipShape(RoundedRectangle(cornerRadius: 15))
                 .padding(.horizontal)
                 
@@ -62,6 +62,7 @@ struct ContentView: View {
                     }
                     .sheet(isPresented: $isShowingSetGoal) {
                         SetGoalView(floatGoal: $goal, isShowingSetGoal: $isShowingSetGoal)
+                            .presentationDetents([.medium])
                     }
                 }
                 .padding()
@@ -70,21 +71,27 @@ struct ContentView: View {
             List {
                 Section(header: Text("Movements")){
                     if (!movements.isEmpty) {
-                        ForEach(movements.reversed()){ movement in
+                        ForEach(movements.reversed(), id: \.id){ movement in
                             if (movement.isIncome) {
-                                Text("\(String(format: "%.2f", movement.amount))")
-                                    .foregroundStyle(.green)
+                                NavigationLink (value: movement) {
+                                    Text("\(String(format: "%.2f", movement.amount))")
+                                        .foregroundStyle(.green)
+                                }
                             } else {
-                                Text("\(String(format: "%.2f", movement.amount))")
-                                    .foregroundStyle(.red)
+                                NavigationLink (value: movement) {
+                                    Text("-\(String(format: "%.2f", movement.amount))")
+                                        .foregroundStyle(.red)
+                                }
                             }
-                            
                         }
                     } else {
                         Text("No movements yet")
                             .foregroundStyle(.gray)
                     }
                 }
+            }
+            .navigationDestination(for: Movement.self) { movement in
+                MovementDetailsView(movement: movement)
             }
         }
     }

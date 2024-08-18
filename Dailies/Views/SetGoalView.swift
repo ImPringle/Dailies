@@ -14,6 +14,8 @@ struct SetGoalView: View {
     
     var body: some View {
         VStack {
+            Text("Set Goal")
+                .font(.headline)
             TextField("Amount", text: $stringGoal)
                 .keyboardType(.decimalPad)
                 .onChange(of: stringGoal) { newValue in
@@ -26,6 +28,8 @@ struct SetGoalView: View {
                 floatGoal = Float(stringGoal)!
                 isShowingSetGoal.toggle()
             }
+            .padding()
+            Spacer()
         }
         .padding(20)
     }

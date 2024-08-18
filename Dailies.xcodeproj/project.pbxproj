@@ -17,6 +17,7 @@
 		7564458F2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564458E2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift */; };
 		75C46DE32C6FC40F00E2451A /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C46DE22C6FC40F00E2451A /* Movement.swift */; };
 		75C46DE52C6FDCD800E2451A /* SetGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C46DE42C6FDCD800E2451A /* SetGoalView.swift */; };
+		FCEE5C612C70583300412CDD /* MovementDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE5C602C70583200412CDD /* MovementDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		7564458E2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		75C46DE22C6FC40F00E2451A /* Movement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		75C46DE42C6FDCD800E2451A /* SetGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalView.swift; sourceTree = "<group>"; };
+		FCEE5C602C70583200412CDD /* MovementDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				752A5A072C6E8A6400D1C636 /* AddMovementView.swift */,
 				75C46DE42C6FDCD800E2451A /* SetGoalView.swift */,
+				FCEE5C602C70583200412CDD /* MovementDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			files = (
 				75C46DE32C6FC40F00E2451A /* Movement.swift in Sources */,
 				756445742C6D324F000A5789 /* ContentView.swift in Sources */,
+				FCEE5C612C70583300412CDD /* MovementDetailsView.swift in Sources */,
 				752A5A082C6E8A6400D1C636 /* AddMovementView.swift in Sources */,
 				756445722C6D324F000A5789 /* DailiesApp.swift in Sources */,
 				75C46DE52C6FDCD800E2451A /* SetGoalView.swift in Sources */,
@@ -450,6 +454,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dailies/Preview Content\"";
+				DEVELOPMENT_TEAM = 4MML36X35X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -457,13 +462,18 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dailies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -478,6 +488,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Dailies/Preview Content\"";
+				DEVELOPMENT_TEAM = 4MML36X35X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -485,13 +496,18 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Dailies;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dalyapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
