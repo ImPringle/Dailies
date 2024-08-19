@@ -20,29 +20,18 @@ struct AddMovementView: View {
             Text("Add Movement")
                 .font(.headline)
             
-//            TextField("Amount", text: Binding(
-//                get: {
-//                    stringAmount
-//                }, set: { newValue in
-//                    let filtered = newValue.filter {"01234567890".contains($0)}
-//                    
-//                    let decimalCount = filtered.filter {$0 == "."}.count
-//                    if decimalCount <= 1 {
-//                        stringAmount = filtered
-//                        
-//                        if let value = Float(filtered) {
-//                            floatAmount = value
-//                        }
-//
-//                    }
-//                }
-//            ))
+           
+            
+            
             TextField("Amount", text: $stringAmount)
                 .keyboardType(.decimalPad)
                 .onChange(of: stringAmount) { newValue in
-                    if let value = Float(newValue) {
-                        floatAmount = value
-                    }
+                    stringAmount = filterToValidFloat(newValue)
+                    
+                    
+//                    if let value = Float(newValue) {
+//                        floatAmount = value
+//                    }
                 }
             
             HStack {

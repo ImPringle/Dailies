@@ -25,6 +25,7 @@ struct ContentView: View {
                 Text("\(String(format: "%.2f", balance))")
                     .font(.system(size: 64)).bold()
                     .padding()
+                
                 HStack{
                     Spacer()
                     Text("\(String(format: "%.2f", goal))")

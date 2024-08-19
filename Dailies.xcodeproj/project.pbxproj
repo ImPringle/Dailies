@@ -15,6 +15,7 @@
 		756445832C6D3251000A5789 /* DailiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756445822C6D3251000A5789 /* DailiesTests.swift */; };
 		7564458D2C6D3251000A5789 /* DailiesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564458C2C6D3251000A5789 /* DailiesUITests.swift */; };
 		7564458F2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7564458E2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift */; };
+		759EA16F2C73D1E200FC267B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 759EA16E2C73D1E200FC267B /* Helpers.swift */; };
 		75C46DE32C6FC40F00E2451A /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C46DE22C6FC40F00E2451A /* Movement.swift */; };
 		75C46DE52C6FDCD800E2451A /* SetGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C46DE42C6FDCD800E2451A /* SetGoalView.swift */; };
 		FCEE5C612C70583300412CDD /* MovementDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEE5C602C70583200412CDD /* MovementDetailsView.swift */; };
@@ -49,6 +50,7 @@
 		756445882C6D3251000A5789 /* DailiesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailiesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7564458C2C6D3251000A5789 /* DailiesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailiesUITests.swift; sourceTree = "<group>"; };
 		7564458E2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailiesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		759EA16E2C73D1E200FC267B /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		75C46DE22C6FC40F00E2451A /* Movement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movement.swift; sourceTree = "<group>"; };
 		75C46DE42C6FDCD800E2451A /* SetGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalView.swift; sourceTree = "<group>"; };
 		FCEE5C602C70583200412CDD /* MovementDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementDetailsView.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			children = (
 				756445712C6D324F000A5789 /* DailiesApp.swift */,
 				756445732C6D324F000A5789 /* ContentView.swift */,
+				759EA16D2C73D1B300FC267B /* Scripts */,
 				75C46DE12C6FC3DF00E2451A /* Models */,
 				752A5A062C6E8A5400D1C636 /* Views */,
 				756445752C6D3251000A5789 /* Assets.xcassets */,
@@ -145,6 +148,14 @@
 				7564458E2C6D3251000A5789 /* DailiesUITestsLaunchTests.swift */,
 			);
 			path = DailiesUITests;
+			sourceTree = "<group>";
+		};
+		759EA16D2C73D1B300FC267B /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				759EA16E2C73D1E200FC267B /* Helpers.swift */,
+			);
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 		75C46DE12C6FC3DF00E2451A /* Models */ = {
@@ -286,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75C46DE32C6FC40F00E2451A /* Movement.swift in Sources */,
+				759EA16F2C73D1E200FC267B /* Helpers.swift in Sources */,
 				756445742C6D324F000A5789 /* ContentView.swift in Sources */,
 				FCEE5C612C70583300412CDD /* MovementDetailsView.swift in Sources */,
 				752A5A082C6E8A6400D1C636 /* AddMovementView.swift in Sources */,
