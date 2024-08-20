@@ -9,6 +9,6 @@ import Foundation
 
 struct Movement: Hashable {
     var id = UUID()
-    var amount: Float
+    var amount: Double
     var isIncome: Bool
 }

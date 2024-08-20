@@ -9,7 +9,10 @@ import SwiftUI
 
 struct SetGoalView: View {
     @State private var stringGoal: String = ""
-    @Binding var floatGoal: Float
+    @State private var isValid: Bool = false
+    @FocusState private var isFocused: Bool
+
+    @Binding var doubleGoal: Double
     @Binding var isShowingSetGoal: Bool
     
     var body: some View {
@@ -18,17 +21,24 @@ struct SetGoalView: View {
                 .font(.headline)
             TextField("Amount", text: $stringGoal)
                 .keyboardType(.decimalPad)
-                .onChange(of: stringGoal) { newValue in
-                    if let value = Float(newValue) {
-                        floatGoal = value
-                    }
+                .onChange(of: stringGoal) {
+                    isValid = isValidInput(stringGoal)
                 }
-            
-            Button ("Confirm") {
-                floatGoal = Float(stringGoal)!
-                isShowingSetGoal.toggle()
+                .focused($isFocused)
+                .onAppear {
+                    isFocused = true
+                }
+            if isValid {
+                Button ("Confirm") {
+                    doubleGoal = Double(stringGoal)!
+                    isShowingSetGoal.toggle()
+                }
+                .padding()
+            } else {
+                Text("Confirm")
+                    .padding()
+                    .foregroundStyle(.gray)
             }
-            .padding()
             Spacer()
         }
         .padding(20)

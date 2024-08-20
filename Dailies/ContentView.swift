@@ -12,23 +12,23 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var path = NavigationPath()
-    @State private var balance: Float = 0
+    @State private var balance: Double = 0
     @State private var isShowingAddMovement: Bool = false
     @State private var isShowingSetGoal: Bool = false
     @State private var movements: [Movement] = []
-    @State private var goal: Float = 1000
+    @State private var goal: Double = 1000
     
     
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
-                Text("\(String(format: "%.2f", balance))")
+                Text("$\(String(format: "%.2f", balance))")
                     .font(.system(size: 64)).bold()
                     .padding()
                 
                 HStack{
                     Spacer()
-                    Text("\(String(format: "%.2f", goal))")
+                    Text("$\(String(format: "%.2f", goal))")
                         .foregroundStyle(.green)
                 }
                 .padding(.horizontal)
@@ -62,7 +62,7 @@ struct ContentView: View {
                         isShowingSetGoal.toggle()
                     }
                     .sheet(isPresented: $isShowingSetGoal) {
-                        SetGoalView(floatGoal: $goal, isShowingSetGoal: $isShowingSetGoal)
+                        SetGoalView(doubleGoal: $goal, isShowingSetGoal: $isShowingSetGoal)
                             .presentationDetents([.medium])
                     }
                 }
@@ -75,12 +75,12 @@ struct ContentView: View {
                         ForEach(movements.reversed(), id: \.id){ movement in
                             if (movement.isIncome) {
                                 NavigationLink (value: movement) {
-                                    Text("\(String(format: "%.2f", movement.amount))")
+                                    Text("$\(String(format: "%.2f", movement.amount))")
                                         .foregroundStyle(.green)
                                 }
                             } else {
                                 NavigationLink (value: movement) {
-                                    Text("-\(String(format: "%.2f", movement.amount))")
+                                    Text("-$\(String(format: "%.2f", movement.amount))")
                                         .foregroundStyle(.red)
                                 }
                             }
