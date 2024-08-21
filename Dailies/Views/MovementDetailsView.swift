@@ -10,11 +10,32 @@ import SwiftUI
 struct MovementDetailsView: View {
     var movement: Movement
     var body: some View {
+
+        
+        
+        
         VStack {
-            Text("\(movement.amount)")
-            Text("Type: \(movement.isIncome ? "Income":"Expense")")
-            Text("Id: \(movement.id)")
+            VStack {
+                Text(movement.isIncome ? "$\(String(format: "%.2f",movement.amount))" : "-$\(String(format: "%.2f",movement.amount))")
+                    .font(.system(size: 64)).bold()
+                    .foregroundStyle(movement.isIncome ? .green : .red)
+                    .padding()
+                HStack {
+                    Text("Type:")
+                    Spacer()
+                    Text("\(movement.isIncome ? "Income":"Expense")")
+                }
+                .padding()
+                HStack {
+                    Text("Id:")
+                    Spacer()
+                    Text("\(movement.id)")
+                }
+                .padding()
+            }
+            Spacer()
         }
+        .accentColor(.white)
         .navigationTitle("Movement Details")
     }
 }

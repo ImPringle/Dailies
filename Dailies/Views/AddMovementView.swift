@@ -25,6 +25,7 @@ struct AddMovementView: View {
             TextField("Amount", text: $stringAmount)
                 .keyboardType(.decimalPad)
                 .onChange(of: stringAmount) {
+                    
                     isValid = isValidInput(stringAmount)
                     
                     if (isValid) {
@@ -35,6 +36,7 @@ struct AddMovementView: View {
                 .onAppear {
                     isFocused = true
                 }
+                
             
             HStack {
                 if isValid {

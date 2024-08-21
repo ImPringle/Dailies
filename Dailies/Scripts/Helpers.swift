@@ -8,6 +8,7 @@
 import Foundation
 
 func isValidInput(_ input: String) -> Bool {
+    if Double(input) == 0 {return false}
     let pattern: String = "^[0-9]+(\\.)?([0-9]+)?$"
     do {
         let regex = try NSRegularExpression(pattern: pattern)

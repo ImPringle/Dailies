@@ -28,6 +28,7 @@ struct SetGoalView: View {
                 .onAppear {
                     isFocused = true
                 }
+                
             if isValid {
                 Button ("Confirm") {
                     doubleGoal = Double(stringGoal)!
