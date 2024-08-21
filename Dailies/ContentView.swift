@@ -25,6 +25,7 @@ struct ContentView: View {
                 Text("$\(String(format: "%.2f", balance))")
                     .font(.system(size: 64)).bold()
                     .padding()
+                    
                 
                 HStack{
                     Spacer()
@@ -73,15 +74,12 @@ struct ContentView: View {
                 Section(header: Text("Movements")){
                     if (!movements.isEmpty) {
                         ForEach(movements.reversed(), id: \.id){ movement in
-                            if (movement.isIncome) {
-                                NavigationLink (value: movement) {
-                                    Text("$\(String(format: "%.2f", movement.amount))")
-                                        .foregroundStyle(.green)
-                                }
-                            } else {
-                                NavigationLink (value: movement) {
-                                    Text("-$\(String(format: "%.2f", movement.amount))")
-                                        .foregroundStyle(.red)
+                            NavigationLink (value: movement) {
+                                HStack {
+                                    Text(movement.isIncome ? "$\(String(format: "%.2f", movement.amount))" : "-$\(String(format: "%.2f", movement.amount))")
+                                        .foregroundStyle(movement.isIncome ? .green : .red)
+                                    Spacer()
+                                    Text("\(timeAgoSinceDate(movement.date))")
                                 }
                             }
                         }
@@ -91,11 +89,16 @@ struct ContentView: View {
                     }
                 }
             }
+            .refreshable {
+                await movements = refreshList(&movements)
+            }
             .navigationDestination(for: Movement.self) { movement in
                 MovementDetailsView(movement: movement)
             }
         }
     }
+    
+    
 }
 
 

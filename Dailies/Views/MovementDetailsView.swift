@@ -32,10 +32,22 @@ struct MovementDetailsView: View {
                     Text("\(movement.id)")
                 }
                 .padding()
+                HStack {
+                    Text("Date:")
+                    Spacer()
+                    Text("\(movement.date, formatter: dateFormatter)")
+                }
+                .padding()
             }
             Spacer()
         }
         .accentColor(.white)
         .navigationTitle("Movement Details")
+    }
+    
+    private var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        return formatter
     }
 }

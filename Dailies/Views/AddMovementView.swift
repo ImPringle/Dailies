@@ -41,7 +41,7 @@ struct AddMovementView: View {
             HStack {
                 if isValid {
                     Button ("income") {
-                        movements.append(Movement(amount: abs(doubleAmount), isIncome: true))
+                        movements.append(Movement(amount: abs(doubleAmount), isIncome: true, date: Date()))
                         balance += abs(doubleAmount)
                         isFocused = false
                         isShowingAddMovements.toggle()
@@ -49,7 +49,7 @@ struct AddMovementView: View {
                     .foregroundStyle(.green)
                     Spacer()
                     Button ("expense") {
-                        movements.append(Movement(amount: abs(doubleAmount), isIncome: false))
+                        movements.append(Movement(amount: abs(doubleAmount), isIncome: false, date: Date()))
                         balance -= abs(doubleAmount)
                         isFocused = false
                         isShowingAddMovements.toggle()

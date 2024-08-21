@@ -11,4 +11,8 @@ struct Movement: Hashable {
     var id = UUID()
     var amount: Double
     var isIncome: Bool
+    var date: Date
+    var refresh: Bool = false
 }
+
+
