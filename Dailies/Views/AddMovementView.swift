@@ -16,6 +16,7 @@ struct AddMovementView: View {
     @Binding var movements: [Movement]
     @Binding var isShowingAddMovements: Bool
     @Binding var balance: Double
+    @Binding var confirmAnimation: Bool
     
     var body: some View {
         VStack {
@@ -45,6 +46,11 @@ struct AddMovementView: View {
                         balance += abs(doubleAmount)
                         isFocused = false
                         isShowingAddMovements.toggle()
+                        Task{
+                            confirmAnimation.toggle()
+                            await wait(duration: 0.8)
+                            confirmAnimation.toggle()
+                        }
                     }
                     .foregroundStyle(.green)
                     Spacer()
@@ -53,6 +59,11 @@ struct AddMovementView: View {
                         balance -= abs(doubleAmount)
                         isFocused = false
                         isShowingAddMovements.toggle()
+                        Task{
+                            confirmAnimation.toggle()
+                            await wait(duration: 0.8)
+                            confirmAnimation.toggle()
+                        }
                     }
                     .foregroundStyle(.red)
                 } else {

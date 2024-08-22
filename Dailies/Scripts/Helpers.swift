@@ -51,3 +51,7 @@ func refreshList (_ movements: inout [Movement]) async -> [Movement] {
     movements = []
     return movs
 }
+
+func wait(duration: Float) async {
+    try? await Task.sleep(nanoseconds: UInt64(1000000000*duration))
+}
